@@ -153,7 +153,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameFrame.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="SceneMgr.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseScene.h" />
+    <ClInclude Include="Define.h" />
+    <ClInclude Include="GameFrame.h" />
+    <ClInclude Include="SceneMgr.h" />
+    <ClInclude Include="Stage.h" />
+    <ClInclude Include="Title.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,18 +1,17 @@
 #include "DxLib.h"
+#include "Define.h"
+#include "GameFrame.h"
 
-// プログラムは WinMain から始まります
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	if (DxLib_Init() == -1)		// ＤＸライブラリ初期化処理
-	{
-		return -1;			// エラーが起きたら直ちに終了
-	}
+	SetGraphMode(SCREEN_X, SCREEN_Y, COLOR_BIT);
+	if (DxLib_Init() == -1)	return -1;
+	SetDrawScreen(DX_SCREEN_BACK);
 
-	while (ProcessMessage() == 0)
+	GameFrame gFrame;
+	gFrame.MainLoop();
 
-	WaitKey();				// キー入力待ち
-
-	DxLib_End();				// ＤＸライブラリ使用の終了処理
-
-	return 0;				// ソフトの終了 
+	DxLib_End();
+	return 0;
 }
